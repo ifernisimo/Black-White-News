@@ -1,0 +1,70 @@
+.publisher{
+    font-size: 18px;
+    line-height: 25px;
+    font-family: 'Open Sans', sans-serif;
+    color: #CBCBCB;
+}
+
+.postTitle{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.postThumb {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100% ;
+    margin-bottom: 13px;
+
+}
+
+.postThumb img{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.postThumb .shortDescription{
+    position: absolute;
+    display: flex;
+    overflow: fragments;
+    max-height: 80px;
+    font-size: 14px;
+    bottom: 0;
+    padding: 18px;
+    background-color: rgba(242, 242, 242, 0.9);
+    border-radius: 0 0 10px 10px;
+
+}
+.actionBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 33px;
+}
+
+.publicationDate{
+    width: 93px;
+    color: #CBCBCB;
+    font-size: 14px;
+    flex-grow: 0.6;
+}
+
+.likeBtn button, .dislikeBtn button, .nextPostBtn button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: none;
+    width: 76px;
+    height: 30px;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+.likeBtn button:hover, .dislikeBtn button:hover, .nextPostBtn button:hover{
+
+    background: #C4C4C4;
+
+}

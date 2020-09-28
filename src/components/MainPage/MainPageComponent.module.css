@@ -1,0 +1,38 @@
+.logo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 15px;
+    font-weight: 800;
+}
+
+.logo h1{
+    font-size: 48px;
+}
+
+.logo span{
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.mainContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 115px;
+}
+
+.leftColumn, .rightColumn{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+
+
+.blackWhiteLists{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
