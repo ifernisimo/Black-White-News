@@ -1,0 +1,30 @@
+.actionBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 33px;
+}
+
+.publicationDate{
+    width: 93px;
+    color: #CBCBCB;
+    font-size: 14px;
+    flex-grow: 0.6;
+}
+
+.likeBtn button, .dislikeBtn button, .nextPostBtn button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: none;
+    width: 76px;
+    height: 30px;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+.likeBtn button:hover, .dislikeBtn button:hover, .nextPostBtn button:hover{
+
+    background: #C4C4C4;
+
+}

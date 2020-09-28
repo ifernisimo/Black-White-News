@@ -1,0 +1,21 @@
+.commentsBlock{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.comment{
+    display: flex;
+    background-color: #F2F2F2;
+    padding: 9px 15px ;
+    font-size: 12px;justify-content: space-between;
+    border-radius: 10px;
+
+}
+
+.commentDate{
+    display: flex;
+    color: #CBCBCB;
+    font-size: 12px;
+    margin-left: 15px;
+}

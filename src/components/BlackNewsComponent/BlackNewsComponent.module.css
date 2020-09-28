@@ -1,0 +1,22 @@
+.blackNews {
+    display: flex;
+    flex-direction: column;
+    background-color: #939393;
+    padding: 15px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.newsItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsItem img{
+    display: flex;
+    width: 100% ;
+}
+
+.newsItem span {
+    display: flex;
+}

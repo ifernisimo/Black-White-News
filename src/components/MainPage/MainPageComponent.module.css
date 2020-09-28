@@ -23,10 +23,16 @@
     margin-top: 115px;
 }
 
-.leftColumn, .rightColumn{
+.leftColumn {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 60%;
+}
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
 }
 
 
@@ -34,5 +40,6 @@
 .blackWhiteLists{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
