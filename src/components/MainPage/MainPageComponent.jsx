@@ -15,14 +15,14 @@ const MainPageComponent = (props) => {
 
       <main className={styles.mainContent}>
         <div className={styles.leftColumn}>
-          <MainPostComponent />
+          <MainPostComponent allNews={props.allNews} />
         </div>
 
         <div className={styles.rightColumn}>
           <SearchComponentContainer />
           <div className={styles.blackWhiteLists}>
-            <WhiteNewsComponent newsArray={props.newsArray} />
-            <BlackNewsComponent newsArray={props.newsArray} />
+            <WhiteNewsComponent whiteNews={props.whiteNews} />
+            <BlackNewsComponent blackNews={props.blackNews} />
           </div>
         </div>
       </main>

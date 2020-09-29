@@ -9,7 +9,9 @@ const MainPageComponentContainer = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  newsArray: state.news.preloadedNews,
+  allNews: state.news.preloadedNews,
+  whiteNews: state.news.generatedWhiteList,
+  blackNews: state.news.generatedBlackList,
 });
 
 export default compose(connect(mapStateToProps, { getSearchNewsFromApi }))(

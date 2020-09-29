@@ -17,6 +17,24 @@ const newsReducer = (state = initialState, action) => {
       return { ...state, preloadedNews: [...action.articles] };
     }
 
+    case FAKE_SEPARATE_NEWS: {
+      return {
+        ...state,
+        generatedBlackList: [
+          ...state.preloadedNews.filter((item) => {
+            const rand = Math.floor(Math.random() * Math.floor(2));
+            return rand === 0 && item;
+          }),
+        ],
+        generatedWhiteList: [
+          ...state.preloadedNews.filter((item) => {
+            const rand = Math.floor(Math.random() * Math.floor(2));
+            return rand === 1 && item;
+          }),
+        ],
+      };
+    }
+
     default:
       return state;
   }
@@ -29,12 +47,17 @@ export const setNewsAC = (articles) => ({
   articles,
 });
 
+export const separateNews = () => ({
+  type: FAKE_SEPARATE_NEWS,
+});
+
 //Thunk Creators
 
 export const getSearchNewsFromApi = (SEARCH_WORD) => async (dispatch) => {
   const response = await newsAPI.getSearchNews(SEARCH_WORD);
   if (response.status === "ok" || response.status === 200) {
     dispatch(setNewsAC(response.data.articles));
+    dispatch(separateNews());
   } else {
     console.log(response.status);
   }

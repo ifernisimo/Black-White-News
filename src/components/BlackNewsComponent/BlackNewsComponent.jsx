@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./BlackNewsComponent.module.css";
 
 const BlackNewsComponent = (props) => {
-  const blackNewsList = props.newsArray.map((news, idx) => (
+  const blackNewsList = props.blackNews.map((news, idx) => (
     <div className={styles.newsItem} key={news.title + idx}>
       <img src={news.urlToImage} alt={news.title} />
       <span>{news.title}</span>
