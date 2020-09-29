@@ -2,64 +2,15 @@ import React from "react";
 import styles from "./BlackNewsComponent.module.css";
 
 const BlackNewsComponent = (props) => {
+  const blackNewsList = props.newsArray.map((news, idx) => (
+    <div className={styles.newsItem} key={news.title + idx}>
+      <img src={news.urlToImage} alt={news.title} />
+      <span>{news.title}</span>
+    </div>
+  ));
   return (
     <>
-      <div className={styles.blackNews}>
-        <div className={styles.newsItem}>
-          <img
-            src="https://cdnimg.rg.ru/img/content/178/03/09/iStock-1174989977_d_850.jpg"
-            alt=""
-          />
-          <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-          </span>
-        </div>
-        <div className={styles.newsItem}>
-          <img
-            src="https://cdnimg.rg.ru/img/content/178/03/09/iStock-1174989977_d_850.jpg"
-            alt=""
-          />
-          <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-          </span>
-        </div>
-        <div className={styles.newsItem}>
-          <img
-            src="https://cdnimg.rg.ru/img/content/178/03/09/iStock-1174989977_d_850.jpg"
-            alt=""
-          />
-          <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-          </span>
-        </div>
-        <div className={styles.newsItem}>
-          <img
-            src="https://cdnimg.rg.ru/img/content/178/03/09/iStock-1174989977_d_850.jpg"
-            alt=""
-          />
-          <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-          </span>
-        </div>
-        <div className={styles.newsItem}>
-          <img
-            src="https://cdnimg.rg.ru/img/content/178/03/09/iStock-1174989977_d_850.jpg"
-            alt=""
-          />
-          <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-          </span>
-        </div>
-        <div className={styles.newsItem}>
-          <img
-            src="https://cdnimg.rg.ru/img/content/178/03/09/iStock-1174989977_d_850.jpg"
-            alt=""
-          />
-          <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-          </span>
-        </div>
-      </div>
+      <div className={styles.blackNews}>{blackNewsList}</div>
     </>
   );
 };

@@ -1,8 +1,5 @@
 import React from "react";
 import styles from "./MainPostComponent.module.css";
-import likeIcon from "../../Assets/images/like-icon.svg";
-import dislikeIcon from "../../Assets/images/dislike-icon.svg";
-import arrowIcon from "../../Assets/images/right-arrow.svg";
 import Comments from "./Comments/Comments";
 import ActionButtons from "./ActionButtons/ActionButtons";
 

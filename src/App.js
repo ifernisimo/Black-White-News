@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
 import Container from "@material-ui/core/Container";
-import MainPageComponent from "./components/MainPage/MainPageComponent";
+import MainPageComponentContainer from "./components/MainPage/MainPageComponentContainer";
 
 function App() {
   return (
     <Container maxWidth="lg">
-      <MainPageComponent />
+      <MainPageComponentContainer />
     </Container>
   );
 }

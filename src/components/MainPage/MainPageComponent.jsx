@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./MainPageComponent.module.css";
 import MainPostComponent from "../MainPostComponent/MainPostComponent";
-import SearchComponent from "../SearchComponent/SearchComponent";
+import SearchComponentContainer from "../SearchComponent/SearchComponentContainer";
 import WhiteNewsComponent from "../WhiteNewsComponent/WhiteNewsComponent";
 import BlackNewsComponent from "../BlackNewsComponent/BlackNewsComponent";
 
@@ -19,10 +19,10 @@ const MainPageComponent = (props) => {
         </div>
 
         <div className={styles.rightColumn}>
-          <SearchComponent />
+          <SearchComponentContainer />
           <div className={styles.blackWhiteLists}>
-            <WhiteNewsComponent />
-            <BlackNewsComponent />
+            <WhiteNewsComponent newsArray={props.newsArray} />
+            <BlackNewsComponent newsArray={props.newsArray} />
           </div>
         </div>
       </main>

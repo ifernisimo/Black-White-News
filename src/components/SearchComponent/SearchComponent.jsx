@@ -5,7 +5,13 @@ const SearchComponent = (props) => {
   return (
     <>
       <div className={styles.search}>
-        <input type="text" placeholder="Поиск..." />
+        <input
+          onBlur={(e) => {
+            props.getSearchNewsFromApi(e.target.value);
+          }}
+          type="text"
+          placeholder="Поиск..."
+        />
       </div>
     </>
   );
