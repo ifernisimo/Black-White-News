@@ -3,12 +3,16 @@ import { newsAPI } from "../../DAL/api";
 const SET_NEWS = "GET_NEWS";
 const FAKE_SEPARATE_NEWS = "FAKE_SEPARATE_NEWS";
 const SET_MAIN_NEWS = "SET_MAIN_NEWS";
+const SET_ACTIVE_POST = "SET_ACTIVE_POST";
+const MOVE_TO_BLACK_NEWS = "MOVE_TO_BLACK_NEWS";
 
 let initialState = {
   preloadedNews: [],
   generatedBlackList: [],
   generatedWhiteList: [],
-  mainNewsPost: null,
+  activePost: null,
+  activePostPosition: 0,
+  mainNewsPost: [],
   searchWord: null,
 };
 
@@ -37,7 +41,25 @@ const newsReducer = (state = initialState, action) => {
     }
 
     case SET_MAIN_NEWS: {
-      return { ...state, mainNewsPost: action.news };
+      return {
+        ...state,
+        mainNewsPost: [...action.news],
+      };
+    }
+
+    case SET_ACTIVE_POST: {
+      return {
+        ...state,
+        activePost: state.mainNewsPost[action.i],
+        activePostPosition: action.i > 19 ? 0 : action.i + 1,
+      };
+    }
+
+    case MOVE_TO_BLACK_NEWS: {
+      return {
+        ...state,
+        generatedBlackList: [action.news, ...state.generatedBlackList],
+      };
     }
 
     default:
@@ -61,6 +83,16 @@ export const setMainNews = (news) => ({
   news,
 });
 
+export const setActivePost = (i) => ({
+  type: SET_ACTIVE_POST,
+  i,
+});
+
+export const moveToBlackNews = (news) => ({
+  type: MOVE_TO_BLACK_NEWS,
+  news,
+});
+
 //Thunk Creators
 
 export const getSearchNewsFromApi = (SEARCH_WORD) => async (dispatch) => {
@@ -68,7 +100,16 @@ export const getSearchNewsFromApi = (SEARCH_WORD) => async (dispatch) => {
   if (response.status === "ok" || response.status === 200) {
     dispatch(setNewsAC(response.data.articles));
     dispatch(separateNews());
-    dispatch(setMainNews(response.data.articles[0]));
+  } else {
+    console.log(response.status);
+  }
+};
+
+export const getTopHeadlinesFromApi = () => async (dispatch) => {
+  const response = await newsAPI.getHeadlineNews();
+  if (response.status === "ok" || response.status === 200) {
+    dispatch(setMainNews(response.data.articles));
+    dispatch(setActivePost(0));
   } else {
     console.log(response.status);
   }

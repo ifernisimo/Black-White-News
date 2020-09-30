@@ -7,7 +7,7 @@ import arrowIcon from "../../../Assets/images/right-arrow.svg";
 const ActionButtons = (props) => {
   return (
     <div className={styles.actionBlock}>
-      <div className={styles.publicationDate}>25 июня 2020 21:17</div>
+      <div className={styles.publicationDate}>{Date(props.publishedAt)}</div>
       <div className={styles.likeBtn}>
         <button>
           <img src={likeIcon} alt="Like icon" />
@@ -21,7 +21,7 @@ const ActionButtons = (props) => {
         </button>
       </div>
       <div className={styles.nextPostBtn}>
-        <button>
+        <button onClick={props.handleNextNews}>
           <img src={arrowIcon} alt="Arrow icon" />
           <span>Next</span>
         </button>

@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./MainPageComponent.module.css";
-import MainPostComponent from "../MainPostComponent/MainPostComponent";
 import SearchComponentContainer from "../SearchComponent/SearchComponentContainer";
 import WhiteNewsComponent from "../WhiteNewsComponent/WhiteNewsComponent";
 import BlackNewsComponent from "../BlackNewsComponent/BlackNewsComponent";
+import MainPostComponentContainer from "../MainPostComponent/MainPostComponentContainer";
 
 const MainPageComponent = (props) => {
   return (
@@ -15,7 +15,7 @@ const MainPageComponent = (props) => {
 
       <main className={styles.mainContent}>
         <div className={styles.leftColumn}>
-          <MainPostComponent mainNews={props.mainNews} />
+          <MainPostComponentContainer {...props} />
         </div>
 
         <div className={styles.rightColumn}>
