@@ -2,6 +2,7 @@ import { newsAPI } from "../../DAL/api";
 
 const SET_NEWS = "GET_NEWS";
 const FAKE_SEPARATE_NEWS = "FAKE_SEPARATE_NEWS";
+const SET_MAIN_NEWS = "SET_MAIN_NEWS";
 
 let initialState = {
   preloadedNews: [],
@@ -35,6 +36,10 @@ const newsReducer = (state = initialState, action) => {
       };
     }
 
+    case SET_MAIN_NEWS: {
+      return { ...state, mainNewsPost: action.news };
+    }
+
     default:
       return state;
   }
@@ -51,6 +56,11 @@ export const separateNews = () => ({
   type: FAKE_SEPARATE_NEWS,
 });
 
+export const setMainNews = (news) => ({
+  type: SET_MAIN_NEWS,
+  news,
+});
+
 //Thunk Creators
 
 export const getSearchNewsFromApi = (SEARCH_WORD) => async (dispatch) => {
@@ -58,6 +68,7 @@ export const getSearchNewsFromApi = (SEARCH_WORD) => async (dispatch) => {
   if (response.status === "ok" || response.status === 200) {
     dispatch(setNewsAC(response.data.articles));
     dispatch(separateNews());
+    dispatch(setMainNews(response.data.articles[0]));
   } else {
     console.log(response.status);
   }

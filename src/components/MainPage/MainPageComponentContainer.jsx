@@ -12,6 +12,7 @@ const mapStateToProps = (state) => ({
   allNews: state.news.preloadedNews,
   whiteNews: state.news.generatedWhiteList,
   blackNews: state.news.generatedBlackList,
+  mainNews: state.news.mainNewsPost,
 });
 
 export default compose(connect(mapStateToProps, { getSearchNewsFromApi }))(

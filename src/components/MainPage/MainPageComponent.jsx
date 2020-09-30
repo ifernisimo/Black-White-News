@@ -15,7 +15,7 @@ const MainPageComponent = (props) => {
 
       <main className={styles.mainContent}>
         <div className={styles.leftColumn}>
-          <MainPostComponent allNews={props.allNews} />
+          <MainPostComponent mainNews={props.mainNews} />
         </div>
 
         <div className={styles.rightColumn}>

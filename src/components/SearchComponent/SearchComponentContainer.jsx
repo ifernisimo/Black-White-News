@@ -5,6 +5,7 @@ import { compose } from "redux";
 import { getSearchNewsFromApi } from "../../BLL/reducers/news-reducer";
 
 const SearchComponentContainer = (props) => {
+  props.getSearchNewsFromApi();
   return <SearchComponent {...props} />;
 };
 
