@@ -4,6 +4,7 @@
     background-color: #DEDEDE;
     padding: 15px;
     border-radius: 10px;
+    width: fit-content;
 }
 
 .newsItem {

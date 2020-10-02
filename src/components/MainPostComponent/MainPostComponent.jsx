@@ -27,6 +27,7 @@ const MainPostComponent = (props) => {
         <ActionButtons
           publishedAt={props.activePost.publishedAt}
           handleNextNews={props.handleNextNews}
+          moveToBlackList={props.moveToBlackList}
         />
       ) : null}
 

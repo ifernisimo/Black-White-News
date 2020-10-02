@@ -5,6 +5,7 @@
     padding: 15px;
     border-radius: 10px;
     margin-left: 20px;
+    width: fit-content;
 }
 
 .newsItem {

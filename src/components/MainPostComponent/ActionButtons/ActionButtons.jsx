@@ -15,7 +15,7 @@ const ActionButtons = (props) => {
         </button>
       </div>
       <div className={styles.dislikeBtn}>
-        <button>
+        <button onClick={props.moveToBlackList}>
           <img src={dislikeIcon} alt="Dislike icon" />
           <span>587</span>
         </button>

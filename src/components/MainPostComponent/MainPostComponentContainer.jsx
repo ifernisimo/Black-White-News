@@ -5,19 +5,26 @@ import MainPostComponent from "./MainPostComponent";
 import {
   getTopHeadlinesFromApi,
   setActivePost,
+  setMainNewsPage,
+  setIsMounted,
+  moveToBlackList,
 } from "./../../BLL/reducers/news-reducer";
 
 const MainPostComponentContainer = (props) => {
   useEffect(() => {
+    debugger;
     let isMounted = true;
-    isMounted && props.getTopHeadlinesFromApi();
+    isMounted && props.getTopHeadlinesFromApi("ua", props.mainNewsPagePosition);
 
     return () => {
-      isMounted = false;
+      props.setIsMounted();
+      isMounted = props.mainPostIsMounted;
     };
-  }, []);
+  }, [props.mainPostIsMounted]);
 
   const handleNextNews = () => {
+    props.activePostPosition === 19 &&
+      props.setMainNewsPage(props.mainNewsPagePosition + 1);
     props.setActivePost(props.activePostPosition);
   };
 
@@ -27,10 +34,16 @@ const MainPostComponentContainer = (props) => {
 const mapStateToProps = (state) => ({
   activePost: state.news.activePost,
   activePostPosition: state.news.activePostPosition,
+  mainNewsPagePosition: state.news.mainNewsPagePosition,
+  mainPostIsMounted: state.news.mainPostIsMounted,
 });
 
 export default compose(
-  connect(mapStateToProps, { getTopHeadlinesFromApi, setActivePost })(
-    MainPostComponentContainer
-  )
+  connect(mapStateToProps, {
+    getTopHeadlinesFromApi,
+    setActivePost,
+    setMainNewsPage,
+    setIsMounted,
+    moveToBlackList,
+  })(MainPostComponentContainer)
 );
