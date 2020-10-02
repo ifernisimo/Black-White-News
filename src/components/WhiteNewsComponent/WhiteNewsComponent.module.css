@@ -20,4 +20,6 @@
 
 .newsItem span {
     display: flex;
+    display: flex;
+    margin: 10px 0 30px 0;
 }

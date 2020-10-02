@@ -1,3 +1,13 @@
+.leaveCommentForm{
+    display: flex;
+    margin: 20px 0;
+}
+
+.leaveCommentForm textarea{
+    display: flex;
+    width: 100%;
+}
+
 .commentsBlock{
     display: flex;
     flex-direction: row;
@@ -6,6 +16,7 @@
 
 .comment{
     display: flex;
+    flex-direction: column;
     background-color: #F2F2F2;
     padding: 9px 15px ;
     font-size: 12px;justify-content: space-between;

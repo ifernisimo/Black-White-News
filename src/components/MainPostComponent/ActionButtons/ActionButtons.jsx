@@ -9,7 +9,7 @@ const ActionButtons = (props) => {
     <div className={styles.actionBlock}>
       <div className={styles.publicationDate}>{Date(props.publishedAt)}</div>
       <div className={styles.likeBtn}>
-        <button>
+        <button onClick={props.moveToWhiteList}>
           <img src={likeIcon} alt="Like icon" />
           <span>1074</span>
         </button>

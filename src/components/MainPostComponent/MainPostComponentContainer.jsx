@@ -8,11 +8,13 @@ import {
   setMainNewsPage,
   setIsMounted,
   moveToBlackList,
+  moveToWhiteList,
+  addCommentAC,
+  updateCommentField,
 } from "./../../BLL/reducers/news-reducer";
 
 const MainPostComponentContainer = (props) => {
   useEffect(() => {
-    debugger;
     let isMounted = true;
     isMounted && props.getTopHeadlinesFromApi("ua", props.mainNewsPagePosition);
 
@@ -28,7 +30,17 @@ const MainPostComponentContainer = (props) => {
     props.setActivePost(props.activePostPosition);
   };
 
-  return <MainPostComponent handleNextNews={handleNextNews} {...props} />;
+  const handleAddCommentForm = (e) => {
+    props.updateCommentField(e.target.value);
+  };
+
+  return (
+    <MainPostComponent
+      handleAddCommentForm={handleAddCommentForm}
+      handleNextNews={handleNextNews}
+      {...props}
+    />
+  );
 };
 
 const mapStateToProps = (state) => ({
@@ -36,6 +48,7 @@ const mapStateToProps = (state) => ({
   activePostPosition: state.news.activePostPosition,
   mainNewsPagePosition: state.news.mainNewsPagePosition,
   mainPostIsMounted: state.news.mainPostIsMounted,
+  commentTextareaField: state.news.commentTextareaField,
 });
 
 export default compose(
@@ -45,5 +58,8 @@ export default compose(
     setMainNewsPage,
     setIsMounted,
     moveToBlackList,
+    moveToWhiteList,
+    addCommentAC,
+    updateCommentField,
   })(MainPostComponentContainer)
 );

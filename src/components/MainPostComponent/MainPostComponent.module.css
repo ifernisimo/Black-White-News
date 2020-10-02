@@ -14,7 +14,6 @@
     display: flex;
     position: relative;
     flex-direction: column;
-    width: 100% ;
     margin-bottom: 13px;
 
 }
@@ -30,8 +29,8 @@
     position: absolute;
     display: flex;
     overflow: fragments;
-    max-height: 80px;
-    font-size: 14px;
+    width: inherit;
+    width: -webkit-fill-available;
     bottom: 0;
     padding: 18px;
     background-color: rgba(242, 242, 242, 0.9);

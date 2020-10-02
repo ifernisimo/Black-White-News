@@ -28,6 +28,7 @@ const MainPostComponent = (props) => {
           publishedAt={props.activePost.publishedAt}
           handleNextNews={props.handleNextNews}
           moveToBlackList={props.moveToBlackList}
+          moveToWhiteList={props.moveToWhiteList}
         />
       ) : null}
 
@@ -37,7 +38,11 @@ const MainPostComponent = (props) => {
         </article>
       </div>
       <hr />
-      <Comments />
+      <Comments
+        handleAddCommentForm={props.handleAddCommentForm}
+        addCommentAC={props.addCommentAC}
+        commentTextareaField={props.commentTextareaField}
+      />
     </>
   );
 };
