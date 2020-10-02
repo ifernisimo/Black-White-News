@@ -109,6 +109,23 @@ const newsReducer = (state = initialState, action) => {
     case ADD_COMMENT: {
       return {
         ...state,
+        activePost: {
+          ...state.activePost,
+          comments: state.activePost.comments
+            ? [
+                {
+                  commentText: state.commentTextareaField,
+                  commentDate: Date(),
+                },
+                ...state.activePost.comments,
+              ]
+            : [
+                {
+                  commentText: state.commentTextareaField,
+                  commentDate: Date(),
+                },
+              ],
+        },
       };
     }
 
@@ -155,9 +172,8 @@ export const moveToWhiteList = () => ({
   type: MOVE_TO_WHITE_NEWS,
 });
 
-export const addCommentAC = (comment) => ({
+export const addCommentAC = () => ({
   type: ADD_COMMENT,
-  comment,
 });
 
 export const updateCommentField = (newText) => ({

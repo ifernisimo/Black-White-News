@@ -38,11 +38,14 @@ const MainPostComponent = (props) => {
         </article>
       </div>
       <hr />
-      <Comments
-        handleAddCommentForm={props.handleAddCommentForm}
-        addCommentAC={props.addCommentAC}
-        commentTextareaField={props.commentTextareaField}
-      />
+      {props.activePost && (
+        <Comments
+          handleAddCommentForm={props.handleAddCommentForm}
+          addCommentAC={props.addCommentAC}
+          commentTextareaField={props.commentTextareaField}
+          comments={props.activePost.comments}
+        />
+      )}
     </>
   );
 };
