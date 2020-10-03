@@ -22,7 +22,10 @@ const MainPageComponent = (props) => {
           <SearchComponentContainer />
           <div className={styles.blackWhiteLists}>
             <WhiteNewsComponent whiteNews={props.whiteNews} />
-            <BlackNewsComponent blackNews={props.blackNews} />
+            <BlackNewsComponent
+              selectBlackNews={props.selectBlackNews}
+              blackNews={props.blackNews}
+            />
           </div>
         </div>
       </main>

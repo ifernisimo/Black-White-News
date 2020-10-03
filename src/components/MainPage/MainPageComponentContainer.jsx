@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import {
   getSearchNewsFromApi,
   getTopHeadlinesFromApi,
+  selectBlackNews,
 } from "../../BLL/reducers/news-reducer";
 
 const MainPageComponentContainer = (props) => {
@@ -18,5 +19,9 @@ const mapStateToProps = (state) => ({
 });
 
 export default compose(
-  connect(mapStateToProps, { getSearchNewsFromApi, getTopHeadlinesFromApi })
+  connect(mapStateToProps, {
+    getSearchNewsFromApi,
+    getTopHeadlinesFromApi,
+    selectBlackNews,
+  })
 )(MainPageComponentContainer);

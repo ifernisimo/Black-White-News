@@ -10,6 +10,7 @@ const SET_IS_MOUNTED = "SET_IS_MOUNTED";
 const MOVE_TO_WHITE_NEWS = "MOVE_TO_WHITE_NEWS";
 const ADD_COMMENT = "ADD_COMMENT";
 const UPDATE_COMMENT_TEXTAREA = "UPDATE_COMMENT_TEXTAREA";
+const SELECT_BLACK_NEWS = "SELECT_BLACK_NEWS";
 
 let initialState = {
   preloadedNews: [],
@@ -73,22 +74,28 @@ const newsReducer = (state = initialState, action) => {
     }
 
     case MOVE_TO_BLACK_NEWS: {
+      const result = state.generatedBlackList.find((item) => {
+        return item.title === state.activePost.title;
+      });
       return {
         ...state,
-        generatedBlackList: [
-          { ...state.activePost },
-          ...state.generatedBlackList,
-        ],
+        generatedBlackList:
+          result === undefined
+            ? [{ ...state.activePost }, ...state.generatedBlackList]
+            : [...state.generatedBlackList],
       };
     }
 
     case MOVE_TO_WHITE_NEWS: {
+      const result = state.generatedWhiteList.find((item) => {
+        return item.title === state.activePost.title;
+      });
       return {
         ...state,
-        generatedWhiteList: [
-          { ...state.activePost },
-          ...state.generatedWhiteList,
-        ],
+        generatedWhiteList:
+          result === undefined
+            ? [{ ...state.activePost }, ...state.generatedWhiteList]
+            : [...state.generatedWhiteList],
       };
     }
 
@@ -126,6 +133,13 @@ const newsReducer = (state = initialState, action) => {
                 },
               ],
         },
+      };
+    }
+
+    case SELECT_BLACK_NEWS: {
+      return {
+        ...state,
+        activePost: action.newText,
       };
     }
 
@@ -179,6 +193,10 @@ export const addCommentAC = () => ({
 export const updateCommentField = (newText) => ({
   type: UPDATE_COMMENT_TEXTAREA,
   newText,
+});
+
+export const selectBlackNews = () => ({
+  type: SELECT_BLACK_NEWS,
 });
 
 //Thunk Creators
