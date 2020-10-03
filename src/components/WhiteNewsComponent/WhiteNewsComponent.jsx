@@ -3,7 +3,12 @@ import styles from "./WhiteNewsComponent.module.css";
 
 const WhiteNewsComponent = (props) => {
   const whiteNewsList = props.whiteNews.map((news, idx) => (
-    <div className={styles.newsItem} key={news.title + idx}>
+    <div
+      onClick={props.handleSelectWhiteNews}
+      className={styles.newsItem}
+      key={news.title + idx}
+      id={idx}
+    >
       <img src={news.urlToImage} alt={news.title} />
       <span>{news.title}</span>
     </div>

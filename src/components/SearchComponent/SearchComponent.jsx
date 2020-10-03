@@ -6,7 +6,7 @@ const SearchComponent = (props) => {
     <>
       <div className={styles.search}>
         <input
-          onBlur={(e) => {
+          onChange={(e) => {
             props.getSearchNewsFromApi(e.target.value);
           }}
           type="text"

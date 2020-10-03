@@ -11,6 +11,7 @@ const MOVE_TO_WHITE_NEWS = "MOVE_TO_WHITE_NEWS";
 const ADD_COMMENT = "ADD_COMMENT";
 const UPDATE_COMMENT_TEXTAREA = "UPDATE_COMMENT_TEXTAREA";
 const SELECT_BLACK_NEWS = "SELECT_BLACK_NEWS";
+const SELECT_WHITE_NEWS = "SELECT_WHITE_NEWS";
 
 let initialState = {
   preloadedNews: [],
@@ -139,7 +140,14 @@ const newsReducer = (state = initialState, action) => {
     case SELECT_BLACK_NEWS: {
       return {
         ...state,
-        activePost: action.newText,
+        activePost: state.generatedBlackList[action.id],
+      };
+    }
+
+    case SELECT_WHITE_NEWS: {
+      return {
+        ...state,
+        activePost: state.generatedWhiteList[action.id],
       };
     }
 
@@ -195,8 +203,14 @@ export const updateCommentField = (newText) => ({
   newText,
 });
 
-export const selectBlackNews = () => ({
+export const selectBlackNews = (id) => ({
   type: SELECT_BLACK_NEWS,
+  id,
+});
+
+export const selectWhiteNews = (id) => ({
+  type: SELECT_WHITE_NEWS,
+  id,
 });
 
 //Thunk Creators

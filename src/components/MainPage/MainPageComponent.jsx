@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./MainPageComponent.module.css";
 import SearchComponentContainer from "../SearchComponent/SearchComponentContainer";
-import WhiteNewsComponent from "../WhiteNewsComponent/WhiteNewsComponent";
-import BlackNewsComponent from "../BlackNewsComponent/BlackNewsComponent";
+import WhiteNewsComponentContainer from "../WhiteNewsComponent/WhiteNewsComponentContainer";
+import BlackNewsComponentContainer from "../BlackNewsComponent/BlackNewsComponentContainer";
 import MainPostComponentContainer from "../MainPostComponent/MainPostComponentContainer";
 
 const MainPageComponent = (props) => {
@@ -13,6 +13,16 @@ const MainPageComponent = (props) => {
         <span>news</span>
       </div>
 
+      <nav className={styles.categoryNavigation}>
+        <li className="navItem">business</li>
+        <li className="navItem">technology</li>
+        <li className="navItem">entertainment</li>
+        <li className="navItem">general</li>
+        <li className="navItem">health</li>
+        <li className="navItem">science</li>
+        <li className="navItem">sports</li>
+      </nav>
+
       <main className={styles.mainContent}>
         <div className={styles.leftColumn}>
           <MainPostComponentContainer {...props} />
@@ -21,11 +31,8 @@ const MainPageComponent = (props) => {
         <div className={styles.rightColumn}>
           <SearchComponentContainer />
           <div className={styles.blackWhiteLists}>
-            <WhiteNewsComponent whiteNews={props.whiteNews} />
-            <BlackNewsComponent
-              selectBlackNews={props.selectBlackNews}
-              blackNews={props.blackNews}
-            />
+            <WhiteNewsComponentContainer whiteNews={props.whiteNews} />
+            <BlackNewsComponentContainer blackNews={props.blackNews} />
           </div>
         </div>
       </main>
