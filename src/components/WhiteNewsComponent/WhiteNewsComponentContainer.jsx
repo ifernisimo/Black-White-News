@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 
 const WhiteNewsComponentContainer = (props) => {
   const handleSelectWhiteNews = (e) => {
-    console.log(e.currentTarget.id);
     props.selectWhiteNews(e.currentTarget.id);
   };
 

@@ -17,14 +17,19 @@
     align-items: center;
     justify-content: space-around;
     border: none;
-    width: 76px;
     height: 30px;
-    background: #FFFFFF;
+    background: #82D2DD;
     border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
 }
 
 .likeBtn button:hover, .dislikeBtn button:hover, .nextPostBtn button:hover{
 
-    background: #C4C4C4;
+    background: #FFFFFF;
 
+}
+
+button span {
+    margin-left: 5px;
 }

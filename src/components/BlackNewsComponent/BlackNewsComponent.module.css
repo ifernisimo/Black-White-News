@@ -12,6 +12,7 @@
 .newsItem {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .newsItem img{

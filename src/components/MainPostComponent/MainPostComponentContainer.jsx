@@ -16,13 +16,14 @@ import {
 const MainPostComponentContainer = (props) => {
   useEffect(() => {
     let isMounted = true;
-    isMounted && props.getTopHeadlinesFromApi("ua", props.mainNewsPagePosition);
+    isMounted &&
+      props.getTopHeadlinesFromApi(props.language, props.mainNewsPagePosition);
 
     return () => {
       props.setIsMounted();
       isMounted = props.mainPostIsMounted;
     };
-  }, [props.mainPostIsMounted]);
+  }, [props.mainPostIsMounted, props.language]);
 
   const handleNextNews = () => {
     props.activePostPosition === 19 &&
@@ -49,6 +50,7 @@ const mapStateToProps = (state) => ({
   mainNewsPagePosition: state.news.mainNewsPagePosition,
   mainPostIsMounted: state.news.mainPostIsMounted,
   commentTextareaField: state.news.commentTextareaField,
+  language: state.news.language,
 });
 
 export default compose(

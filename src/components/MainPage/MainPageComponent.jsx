@@ -12,16 +12,19 @@ const MainPageComponent = (props) => {
         <h1>BLACK/WHITE</h1>
         <span>news</span>
       </div>
-
-      <nav className={styles.categoryNavigation}>
-        <li className="navItem">business</li>
-        <li className="navItem">technology</li>
-        <li className="navItem">entertainment</li>
-        <li className="navItem">general</li>
-        <li className="navItem">health</li>
-        <li className="navItem">science</li>
-        <li className="navItem">sports</li>
-      </nav>
+      <div className={styles.language}>
+        <select
+          onChange={props.handleChangeLanguage}
+          defaultValue="ua"
+          name="country"
+          id="country"
+        >
+          <option value="ua">Ukraine</option>
+          <option value="us">USA</option>
+          <option value="ru">Russia</option>
+          <option value="de">Deutch</option>
+        </select>
+      </div>
 
       <main className={styles.mainContent}>
         <div className={styles.leftColumn}>

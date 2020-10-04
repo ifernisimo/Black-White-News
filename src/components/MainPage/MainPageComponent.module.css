@@ -3,17 +3,19 @@
     align-items: center;
     flex-direction: column;
     font-family: 'Open Sans', sans-serif;
-    line-height: 15px;
+    margin: 0;
     font-weight: 800;
 }
 
 .logo h1{
+    margin: 0;
     font-size: 48px;
 }
 
 .logo span{
     font-size: 24px;
     font-weight: 800;
+
 }
 
 .mainContent{
@@ -43,14 +45,6 @@
     justify-content: center;
 }
 
-.categoryNavigation{
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    left: 0;
-    color: white;
-    top: 0;
-    height: 100vh;
-    background-color: black;
+.language{
+
 }

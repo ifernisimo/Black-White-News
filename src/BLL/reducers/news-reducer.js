@@ -12,8 +12,10 @@ const ADD_COMMENT = "ADD_COMMENT";
 const UPDATE_COMMENT_TEXTAREA = "UPDATE_COMMENT_TEXTAREA";
 const SELECT_BLACK_NEWS = "SELECT_BLACK_NEWS";
 const SELECT_WHITE_NEWS = "SELECT_WHITE_NEWS";
+const CHANGE_LANGUAGE = "CHANGE_LANGUAGE";
 
 let initialState = {
+  language: "ua",
   preloadedNews: [],
   generatedBlackList: [],
   generatedWhiteList: [],
@@ -151,6 +153,13 @@ const newsReducer = (state = initialState, action) => {
       };
     }
 
+    case CHANGE_LANGUAGE: {
+      return {
+        ...state,
+        language: action.language,
+      };
+    }
+
     default:
       return state;
   }
@@ -211,6 +220,11 @@ export const selectBlackNews = (id) => ({
 export const selectWhiteNews = (id) => ({
   type: SELECT_WHITE_NEWS,
   id,
+});
+
+export const selectLanguage = (language) => ({
+  type: CHANGE_LANGUAGE,
+  language,
 });
 
 //Thunk Creators

@@ -4,9 +4,14 @@
 }
 
 .leaveCommentForm textarea{
+    outline: none;
+    border: none;
+    background-color: #EFF6F6;
+    border-radius: 20px 0 0px 20px;
+    padding: 10px;
     display: flex;
     width: 100%;
-    height: 100px;
+    height: 50px;
 }
 
 .commentsBlock{
@@ -32,4 +37,21 @@
     color: #CBCBCB;
     font-size: 12px;
     margin-left: 15px;
+}
+
+.sendButton{
+    background: #82D2DD;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 0px 20px 20px 0px;
+    padding: 10px;
+    outline: none;
+    border:none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.sendButton:hover{
+    background: #FFFFFF;
+    color: #359eec;
 }

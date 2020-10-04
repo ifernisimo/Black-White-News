@@ -28,7 +28,9 @@ const Comments = (props) => {
           onChange={props.handleAddCommentForm}
           placeholder="Leave your comment here ..."
         ></textarea>
-        <button onClick={props.addCommentAC}>Comment it</button>
+        <button className={styles.sendButton} onClick={props.addCommentAC}>
+          Comment it
+        </button>
       </div>
 
       {comments}

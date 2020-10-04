@@ -11,13 +11,13 @@ const ActionButtons = (props) => {
       <div className={styles.likeBtn}>
         <button onClick={props.moveToWhiteList}>
           <img src={likeIcon} alt="Like icon" />
-          <span>1074</span>
+          <span>GOOD NEWS</span>
         </button>
       </div>
       <div className={styles.dislikeBtn}>
         <button onClick={props.moveToBlackList}>
           <img src={dislikeIcon} alt="Dislike icon" />
-          <span>587</span>
+          <span>BAD NEWS</span>
         </button>
       </div>
       <div className={styles.nextPostBtn}>

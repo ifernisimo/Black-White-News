@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./MainPostComponent.module.css";
 import Comments from "./Comments/Comments";
 import ActionButtons from "./ActionButtons/ActionButtons";
+import { Divider } from "@material-ui/core";
 
 const MainPostComponent = (props) => {
   return (
@@ -37,7 +38,8 @@ const MainPostComponent = (props) => {
           {props.activePost ? props.activePost.content : "Loading..."}
         </article>
       </div>
-      <hr />
+
+      <Divider />
       {props.activePost && (
         <Comments
           handleAddCommentForm={props.handleAddCommentForm}

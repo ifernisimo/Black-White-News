@@ -6,15 +6,10 @@ const instance = axios.create({
 });
 
 export const newsAPI = {
-  getSearchNews(
-    SEARCH_WORD,
-    DATE_FROM = Date,
-    DATE_TO = Date,
-    SORT_BY = "relevancy"
-  ) {
+  getSearchNews(SEARCH_WORD, DATE_FROM, DATE_TO) {
     return instance
       .get(
-        `everything?q=${SEARCH_WORD}&from=${DATE_FROM}&to=${DATE_TO}&sortBy=${SORT_BY}&apiKey=${API_KEY}`
+        `everything?q=${SEARCH_WORD}&from=${DATE_FROM}&to=${DATE_TO}&apiKey=${API_KEY}`
       )
       .then((response) => response);
   },

@@ -6,10 +6,17 @@ import {
   getSearchNewsFromApi,
   getTopHeadlinesFromApi,
   selectBlackNews,
+  selectLanguage,
 } from "../../BLL/reducers/news-reducer";
 
 const MainPageComponentContainer = (props) => {
-  return <MainPageComponent {...props} />;
+  const handleChangeLanguage = (e) => {
+    props.selectLanguage(e.target.value);
+  };
+
+  return (
+    <MainPageComponent handleChangeLanguage={handleChangeLanguage} {...props} />
+  );
 };
 
 const mapStateToProps = (state) => ({
@@ -23,5 +30,6 @@ export default compose(
     getSearchNewsFromApi,
     getTopHeadlinesFromApi,
     selectBlackNews,
+    selectLanguage,
   })
 )(MainPageComponentContainer);
