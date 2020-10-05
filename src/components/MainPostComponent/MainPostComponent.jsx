@@ -15,7 +15,13 @@ const MainPostComponent = (props) => {
       </div>
       <div className={styles.postThumb}>
         {props.activePost ? (
-          <img src={props.activePost.urlToImage} alt="" />
+          <img
+            src={
+              props.activePost.urlToImage ||
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1200px-No_image_3x4.svg.png"
+            }
+            alt=""
+          />
         ) : (
           "Loading..."
         )}

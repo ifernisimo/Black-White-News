@@ -14,7 +14,7 @@ export const newsAPI = {
       .then((response) => response);
   },
 
-  getHeadlineNews(COUNTRY = "ua", PAGE) {
+  getHeadlineNews(COUNTRY, PAGE) {
     return instance
       .get(`top-headlines?country=${COUNTRY}&page=${PAGE}&apiKey=${API_KEY}`)
       .then((response) => response);

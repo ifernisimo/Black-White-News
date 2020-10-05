@@ -13,6 +13,8 @@ const UPDATE_COMMENT_TEXTAREA = "UPDATE_COMMENT_TEXTAREA";
 const SELECT_BLACK_NEWS = "SELECT_BLACK_NEWS";
 const SELECT_WHITE_NEWS = "SELECT_WHITE_NEWS";
 const CHANGE_LANGUAGE = "CHANGE_LANGUAGE";
+const SET_DATE_FROM = "SET_DATE_FROM";
+const SET_DATE_TO = "SET_DATE_TO";
 
 let initialState = {
   language: "ua",
@@ -26,6 +28,8 @@ let initialState = {
   searchWord: null,
   mainPostIsMounted: true,
   commentTextareaField: "",
+  searchFromDate: new Date() - 604800000,
+  searchToDate: Date(),
 };
 
 const newsReducer = (state = initialState, action) => {
@@ -160,6 +164,20 @@ const newsReducer = (state = initialState, action) => {
       };
     }
 
+    case SET_DATE_FROM: {
+      return {
+        ...state,
+        searchFromDate: action.newDate,
+      };
+    }
+
+    case SET_DATE_TO: {
+      return {
+        ...state,
+        searchToDate: action.newDate,
+      };
+    }
+
     default:
       return state;
   }
@@ -227,9 +245,20 @@ export const selectLanguage = (language) => ({
   language,
 });
 
+export const setDateFrom = (newDate) => ({
+  type: SET_DATE_FROM,
+  newDate,
+});
+
+export const setDateTo = (newDate) => ({
+  type: SET_DATE_TO,
+  newDate,
+});
 //Thunk Creators
 
-export const getSearchNewsFromApi = (SEARCH_WORD) => async (dispatch) => {
+export const getSearchNewsFromApi = (SEARCH_WORD, DATE_FROM, DATE_TO) => async (
+  dispatch
+) => {
   const response = await newsAPI.getSearchNews(SEARCH_WORD);
   if (response.status === "ok" || response.status === 200) {
     dispatch(setNewsAC(response.data.articles));

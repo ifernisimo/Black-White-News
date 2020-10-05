@@ -1,12 +1,13 @@
 .blackNews {
     display: flex;
     flex-direction: column;
-    background-color: #000000;
+    background-color: #222222;
     color: #FFFFFF;
     padding: 15px;
-    border-radius: 10px;
     margin-left: 20px;
     width: fit-content;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
 
 .newsItem {

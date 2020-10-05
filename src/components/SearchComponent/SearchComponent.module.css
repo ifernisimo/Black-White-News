@@ -11,3 +11,16 @@
     padding: 0 15px;
     margin-bottom: 27px;
 }
+
+.datePicker{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dateFrom{
+    width: 45%;
+}
+
+.dateTo{
+    width: 45%;
+}

@@ -19,6 +19,4 @@ const WhiteNewsComponentContainer = (props) => {
 
 const mapStateToProps = (state) => {};
 
-export default connect(mapStateToProps, { selectWhiteNews })(
-  WhiteNewsComponentContainer
-);
+export default WhiteNewsComponentContainer;
