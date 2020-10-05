@@ -6,7 +6,7 @@ import { Divider } from "@material-ui/core";
 
 const MainPostComponent = (props) => {
   return (
-    <>
+    <div className={styles.mainPost}>
       <div className={styles.publisher}>
         <span>{props.activePost ? props.activePost.author : "Loading..."}</span>
       </div>
@@ -54,7 +54,7 @@ const MainPostComponent = (props) => {
           comments={props.activePost.comments}
         />
       )}
-    </>
+    </div>
   );
 };
 

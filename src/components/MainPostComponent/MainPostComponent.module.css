@@ -1,3 +1,5 @@
+
+
 .publisher{
     font-size: 18px;
     line-height: 25px;
@@ -22,7 +24,9 @@
     display: flex;
     width: 100%;
     margin-top: 20px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
+
 }
 
 .postThumb .shortDescription{
