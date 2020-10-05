@@ -1,7 +1,5 @@
 import React from "react";
-import styles from "./BlackNewsComponent.module.css";
 import BlackNewsComponent from "./BlackNewsComponent";
-import { compose } from "redux";
 import { connect } from "react-redux";
 import { selectBlackNews } from "../../BLL/reducers/news-reducer";
 

@@ -6,7 +6,6 @@ import {
 } from "@material-ui/pickers";
 
 import DateFnsUtils from "@date-io/date-fns";
-import { setDateTo } from "../../BLL/reducers/news-reducer";
 const SearchComponent = (props) => {
   const handleDateChangeFrom = (date) => {
     props.setDateFrom(date);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { compose } from "redux";
 import { connect } from "react-redux";
 import MainPostComponent from "./MainPostComponent";
@@ -23,7 +23,7 @@ const MainPostComponentContainer = (props) => {
       props.setIsMounted();
       isMounted = props.mainPostIsMounted;
     };
-  }, [props.mainPostIsMounted, props.language]);
+  }, [props.mainPostIsMounted, props.language, props]);
 
   const handleNextNews = () => {
     props.activePostPosition === 19 &&
