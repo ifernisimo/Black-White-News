@@ -45,6 +45,35 @@
     justify-content: center;
 }
 
-.language{
+@media (max-width: 800px) {
+    .logo h1{
+        margin: 0;
+        font-size: 36px;
+    }
 
+    .logo span{
+        font-size: 12px;
+        font-weight: 800;
+
+    }
+
+    .mainContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .leftColumn {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .rightColumn {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
 }

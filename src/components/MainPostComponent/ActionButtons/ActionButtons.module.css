@@ -33,3 +33,26 @@
 button span {
     margin-left: 5px;
 }
+
+@media (max-width: 500px) {
+    .actionBlock {
+        display: flex;align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 10px;
+    }
+
+    .publicationDate{
+        width:100%;
+        text-align: center;
+        color: #CBCBCB;
+        margin-bottom: 5px;
+        font-size: 14px;
+        flex-grow: 0.6;
+    }
+
+
+    .likeBtn button, .dislikeBtn button, .nextPostBtn button{
+        margin: 5px;
+    }
+}
