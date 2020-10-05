@@ -1,0 +1,10 @@
+.language{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+}
+
+.formControl{
+    width: 150px;
+}

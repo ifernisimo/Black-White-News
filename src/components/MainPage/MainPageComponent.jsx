@@ -4,6 +4,7 @@ import SearchComponentContainer from "../SearchComponent/SearchComponentContaine
 import WhiteNewsComponentContainer from "../WhiteNewsComponent/WhiteNewsComponentContainer";
 import BlackNewsComponentContainer from "../BlackNewsComponent/BlackNewsComponentContainer";
 import MainPostComponentContainer from "../MainPostComponent/MainPostComponentContainer";
+import CountrySelectorComponent from "./CountrySelector/CountrySelectorComponent";
 
 const MainPageComponent = (props) => {
   return (
@@ -12,19 +13,9 @@ const MainPageComponent = (props) => {
         <h1>BLACK/WHITE</h1>
         <span>news</span>
       </div>
-      <div className={styles.language}>
-        <select
-          onChange={props.handleChangeLanguage}
-          defaultValue="ua"
-          name="country"
-          id="country"
-        >
-          <option value="ua">Ukraine</option>
-          <option value="us">USA</option>
-          <option value="ru">Russia</option>
-          <option value="de">Deutch</option>
-        </select>
-      </div>
+      <CountrySelectorComponent
+        handleChangeLanguage={props.handleChangeLanguage}
+      />
 
       <main className={styles.mainContent}>
         <div className={styles.leftColumn}>
